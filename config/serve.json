@@ -1,0 +1,29 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://chandrudemo.sharepoint.com/sites/FLXCommunity/sitepages/HOme.aspx",
+      "customActions": {
+        "b53e7bab-2332-459a-ad60-b9ae2b7d41ec": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    },
+    "spfxSideNavigation": {
+      "pageUrl": "https://chandrudemo.sharepoint.com/sites/FLXCommunity/sitepages/HOme.aspx",
+      "customActions": {
+        "b53e7bab-2332-459a-ad60-b9ae2b7d41ec": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    }
+  }
+}

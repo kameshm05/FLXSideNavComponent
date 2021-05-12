@@ -1,0 +1,201 @@
+$panelWidth: 50px;
+$panelWidthOpened: 260px;
+
+$white: #fff;
+$orange: #e67e22;
+
+$sideNavBarBgColor: #011e41;
+$navNodeTextIconColor: $white;
+$navNodeTextIconHoverColor: $white;
+$navNodeTextIconHoverBgColor: #009ade;
+
+/* break points borrowed from Office UI Fabric */
+$ms-screen-min-sm: 320px !default;
+$ms-screen-min-md: 480px !default;
+$ms-screen-min-lg: 640px !default;
+$ms-screen-max-sm: ($ms-screen-min-md - 1);
+$ms-screen-max-md: ($ms-screen-min-lg - 1);
+
+@mixin Desktop {
+  @media only screen and (min-width: $ms-screen-min-md) {
+    @content;
+  }
+}
+
+#spPageChromeAppDiv,
+.sp-App-body {
+  margin-left: $panelWidth;
+}
+
+.visible-i {
+  visibility: visible !important;
+}
+
+.ql-menu {
+  cursor: pointer;
+}
+
+@mixin SiteNavNode {
+  color: $navNodeTextIconColor;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.site-nav-node {
+  position: relative;
+  background-color: $sideNavBarBgColor;
+  cursor: pointer;
+
+  &.dropdown {
+    > div:not(.dynamic-children) {
+      .title {
+        width: 170px;
+        margin-right: 30px;
+      }
+      button {
+        border: 0;
+        background-color: transparent;
+        position: absolute;
+        right: 10px;
+      }
+    }
+  }
+  &.active,
+  &:hover,
+  &.opened {
+    .icon-node {
+      background-color: $navNodeTextIconHoverBgColor;
+      .icon svg {
+        fill: $navNodeTextIconHoverColor;
+      }
+      .title,
+      i {
+        color: $navNodeTextIconHoverColor;
+      }
+      button {
+        background-color: transparent;
+      }
+    }
+  }
+  .icon-node {
+    div {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .title {
+      @include SiteNavNode();
+    }
+    i {
+      color: $navNodeTextIconColor;
+    }
+    .icon {
+      width: $panelWidth;
+      height: $panelWidth;
+      padding: 12px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      svg {
+        max-width: $panelWidth;
+        width: 100%;
+        height: auto;
+        fill: $navNodeTextIconColor;
+      }
+    }
+    button {
+      margin: 0;
+      padding: 0;
+      height: auto;
+      width: auto;
+      button {
+        margin: 0;
+        padding: 0;
+        height: auto;
+        width: auto;
+      }
+      [data-icon-name="ChevronDownSmall"],
+      [data-icon-name="ChevronUpSmall"] {
+        position: relative;
+        top: -2px;
+      }
+    }
+  }
+  .dynamic-children {
+    background-color: $orange;
+    .site-nav-node {
+      .title-node {
+        padding: 10px;
+        color: $navNodeTextIconColor;
+      }
+      &.active,
+      &:hover {
+        background-color: $navNodeTextIconHoverBgColor;
+        .title-node {
+          color: $navNodeTextIconHoverColor;
+        }
+      }
+    }
+  }
+}
+
+.site-menu-panel {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 3;
+  background-color: $sideNavBarBgColor;
+  margin-top: 50px;
+  > div:first-child {
+    background-color: $sideNavBarBgColor;
+  }
+
+  .site-menu-icon {
+    width: $panelWidth;
+    height: $panelWidth;
+    color: $navNodeTextIconColor;
+    background-color: $sideNavBarBgColor;
+    margin: 0 auto;
+    &:hover,
+    &.active {
+      background-color: $navNodeTextIconHoverBgColor;
+      color: $navNodeTextIconHoverColor;
+    }
+  }
+
+  .site-menu {
+    button {
+      border: 0;
+    }
+    > .site-nav-node {
+      cursor: pointer;
+    }
+    .dynamic-children {
+      display: none;
+    }
+    &:not(.opened) {
+      width: $panelWidth;
+      .site-nav-node:hover .dynamic-children.flyouts {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: $panelWidth;
+        width: $panelWidthOpened;
+      }
+    }
+    &.opened {
+      width: $panelWidthOpened;
+      .menu-toggle {
+        margin-left: $panelWidthOpened - $panelWidth;
+      }
+      .site-nav-node .dynamic-children {
+        display: block;
+        .site-nav-node {
+          .title-node {
+            padding-left: $panelWidth;
+          }
+        }
+      }
+    }
+  }
+}

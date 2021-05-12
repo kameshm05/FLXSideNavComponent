@@ -1,0 +1,29 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+    "solution": {
+        "name": "spfx-side-navigation-client-side-solution",
+        "id": "3564f9fb-42a8-48ca-ad0c-1c7d6c01eb72",
+        "version": "1.0.0.170",
+        "includeClientSideAssets": true,
+        "features": [
+            {
+                "title": "Application Extension - Deployment of custom action.",
+                "description": "Deploys a custom action with ClientSideComponentId association",
+                "id": "179819ea-ca50-4225-929e-f640aad32429",
+                "version": "1.0.0.4",
+                "assets": {
+                    "elementManifests": [
+                        "elements.xml",
+                        "listElements.xml"
+                    ],
+                    "elementFiles": [
+                        "listSchema_SideNav.xml"
+                    ]
+                }
+            }
+        ]
+    },
+    "paths": {
+        "zippedPackage": "solution/spfx-side-navigation.sppkg"
+    }
+}
