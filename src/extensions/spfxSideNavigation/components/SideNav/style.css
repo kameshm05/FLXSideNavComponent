@@ -1,17 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
 .site-menu-panel {
   margin-top: 48px !important;
 }
 .site-menu hr {
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
   border-top: 1px solid white;
   margin: 0 !important;
 }
 
 .site-menu-panel .site-menu.opened .site-nav-node .icon-node {
-  padding: 0 3rem;
+  padding: 0 1.5rem;
 }
 .site-nav-items-container {
   margin-bottom: 20px;
@@ -23,11 +29,86 @@
   display: block;
   color: #fff;
   text-align: center;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0.8rem 0;
 }
 .icon-node:hover {
   background: #72c0e3 !important;
 }
 .quick-link-navs {
   margin-top: 20px;
+}
+.site-menu-panel {
+  overflow: auto;
+}
+.site-menu-panel::-webkit-scrollbar {
+  width: 6px;
+  background-color: #dbdbdb;
+}
+
+.site-menu-panel::-webkit-scrollbar-thumb {
+  background-color: #808080;
+  border-radius: 10px;
+}
+.site-nav-node .icon-node {
+  display: flex;
+  align-items: center;
+}
+.site-menu-panel {
+  z-index: 10;
+}
+.ext-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  position: fixed;
+  margin-top: 3rem;
+  top: 0;
+  left: 0;
+  height: 50px;
+  background: #011e41;
+  padding-left: 5rem;
+  padding-right: 2rem;
+}
+.welcome-note {
+  color: #009ade;
+  font-size: 1.2rem;
+}
+.user-details {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  border-left: 2px solid #fff;
+  height: 100%;
+}
+.username-logo {
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 0.3rem;
+  margin-right: 1rem;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-name-details {
+  color: #fff;
+}
+.menu-container {
+  position: relative;
+}
+.menu-container video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+div[data-automationid="MinimalHeader"] {
+  display: none;
+}
+.webPartContainer {
+  display: none;
 }

@@ -5,24 +5,27 @@ import ISideNavItem from "./model/ISideNavItem";
 import ISideNavProvider from "./provider/ISideNavProvider";
 import SideNavProvider from "./provider/SideNavProvider";
 import ISideNavProps from "./ISideNavProps";
-import ISideNavState from "./ISideNavState";
+import ISideNavState from "./ISideNavState"; 
 import "./style.css";
+let sitVideo="/sites/FLXCommunity/VideoLibrary/";
+let videos="./video./rain.mp4";
 export default class SideNav extends React.Component<
   ISideNavProps,
   ISideNavState
 > {
   private sideNavProvider: ISideNavProvider;
-
+  
   constructor(props: ISideNavProps) {
     super(props);
     this.state = {
-      siteNavItems: [],
+      siteNavItems: [],     
       isOpened: false,
-      siteQuickLinkItems:[]
-    }; 
+      siteQuickLinkItems:[],
+      SideNavVideo: ""  
+    };  
     window.addEventListener("click", this.handleOutsideClick, true);
   }
-
+ 
   public componentWillMount(): void {
     this.sideNavProvider = new SideNavProvider();
   }
@@ -60,27 +63,40 @@ export default class SideNav extends React.Component<
     const toggleIconName: string = this.state.isOpened
       ? "DoubleChevronLeft8"
       : "DoubleChevronRight8";
-    return (  
+    return (    
+      <div>
+        <div className="ext-header"> 
+        <div className="welcome-note">Welcome to FLX Community</div>
+        {/* <div className="user-details">
+          <div className="username-logo">HG</div>
+          <div className="user-name-details">
+            <h4>HHW Group</h4>
+            <h5>Admin</h5>
+          </div>
+        </div> */}
+        </div>
       <div
       onMouseEnter={this.toggleNav}
-      onMouseLeave={this.toggleNav}
+      onMouseLeave={this.toggleNav}  
         className={`site-menu-panel ms-slideRightIn40 visible-i`}
-        style={{
+        style={{ 
           visibility: "hidden",
         }} /* set to hidden then onces css loads it will be visible */
-      >
-        <div className={siteMenuClass}>
-          <div className="menu-toggle">
+      >  
+      <div className="menu-container">
+      
+        <div className={siteMenuClass}>  
+          <div className="menu-toggle"> 
             {   
               <IconButton
                 className="site-menu-icon"
                 checked={false}
                 iconProps={{
-                  iconName: toggleIconName,
+                  iconName: toggleIconName,    
                 }}
                 title="Toggle Menu"
                 ariaLabel="Toggle Menu"
-                onClick={this.toggleNav}
+                onClick={this.toggleNav} 
               />
             } 
           </div> 
@@ -95,6 +111,8 @@ export default class SideNav extends React.Component<
             this.state.siteQuickLinkItems.map(this.renderSideNavNodes)}
             </div> 
         </div>    
+        </div>
+      </div>
       </div>
     );
   } 
