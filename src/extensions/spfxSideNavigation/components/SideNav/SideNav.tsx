@@ -63,9 +63,10 @@ export default class SideNav extends React.Component<
     const toggleIconName: string = this.state.isOpened
       ? "DoubleChevronLeft8"
       : "DoubleChevronRight8";
+      const welcomeNoteSpace: string= this.state.isOpened?"ext-header opened":"ext-header"
     return (    
       <div>
-        <div className="ext-header"> 
+        <div className={welcomeNoteSpace}> 
         <div className="welcome-note">Welcome to FLX Community</div>
         {/* <div className="user-details">
           <div className="username-logo">HG</div>
@@ -74,10 +75,10 @@ export default class SideNav extends React.Component<
             <h5>Admin</h5>
           </div>
         </div> */}
-        </div>
+        </div> 
       <div
       onMouseEnter={this.toggleNav}
-      onMouseLeave={this.toggleNav}  
+      onMouseLeave={this.toggleNav} 
         className={`site-menu-panel ms-slideRightIn40 visible-i`}
         style={{ 
           visibility: "hidden",

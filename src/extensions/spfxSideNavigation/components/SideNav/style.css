@@ -112,3 +112,12 @@ div[data-automationid="MinimalHeader"] {
 .webPartContainer {
   display: none;
 }
+.ext-header.opened {
+  padding-left: 18rem;
+}
+.ms-List-page {
+  margin-top: 1.5rem;
+}
+.od-ItemsScopeItemContent-header.od-ItemContent-header {
+  padding-bottom: 32px;
+}
