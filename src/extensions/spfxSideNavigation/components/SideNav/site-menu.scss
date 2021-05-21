@@ -25,6 +25,7 @@ $ms-screen-max-md: ($ms-screen-min-lg - 1);
 #spPageChromeAppDiv,
 .sp-App-body {
   margin-left: $panelWidth;
+  padding-top: 50px;
 }
 
 .visible-i {
@@ -38,12 +39,12 @@ $ms-screen-max-md: ($ms-screen-min-lg - 1);
 @mixin SiteNavNode {
   color: $navNodeTextIconColor;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .site-nav-node {
   position: relative;
-  background-color: $sideNavBarBgColor;
+  // background-color: $sideNavBarBgColor;
   cursor: pointer;
 
   &.dropdown {
@@ -89,8 +90,8 @@ $ms-screen-max-md: ($ms-screen-min-lg - 1);
       color: $navNodeTextIconColor;
     }
     .icon {
-      width: $panelWidth;
-      height: $panelWidth;
+      width: 45px;
+      height: 45px;
       padding: 12px;
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
@@ -142,7 +143,7 @@ $ms-screen-max-md: ($ms-screen-min-lg - 1);
   position: fixed;
   left: 0;
   top: 0;
-  height: 100vh;
+  height: calc(100vh - 48px);
   z-index: 3;
   background-color: $sideNavBarBgColor;
   margin-top: 50px;
