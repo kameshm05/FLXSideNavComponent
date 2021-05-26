@@ -17,7 +17,10 @@
 }
 
 .site-menu-panel .site-menu.opened .site-nav-node .icon-node {
-  padding: 0 1.5rem;
+  padding: 0.8rem 1.5rem;
+}
+.icon-node {
+  padding: 0.8rem 0;
 }
 .site-nav-items-container {
   margin-bottom: 20px;
@@ -120,4 +123,9 @@ div[data-automationid="MinimalHeader"] {
 }
 .od-ItemsScopeItemContent-header.od-ItemContent-header {
   padding-bottom: 32px;
+}
+.sideNavImg {
+  width: 1.3rem;
+  height: 1.3rem;
+  margin: 0 0.6rem;
 }

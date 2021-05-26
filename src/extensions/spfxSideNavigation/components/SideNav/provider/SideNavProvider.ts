@@ -12,7 +12,7 @@ export default class SideNavProvider implements ISideNavProvider {
         "SideNavUrl",
         "SideNavIconSvg",
         "SideNavOpenInNewWindow",
-        "SideNavParent/Title"
+        "SideNavParent/Title","IconImages"
       )
       .expand("SideNavParent")
       .orderBy("SideNavOrder")
@@ -23,8 +23,15 @@ export default class SideNavProvider implements ISideNavProvider {
           const siteNavItems: ISideNavItem[] = [];
           items.forEach(
             (item: ISPSideNavItem): void => {
+              const itemImage = JSON.parse(item.IconImages) || {};
+              const imgserverUrl = itemImage.serverUrl || "";
+              const imageUrl = itemImage.serverRelativeUrl || "";
+              console.log(imgserverUrl);
+              console.log(imageUrl);
               if (!item.SideNavParent) {
                 siteNavItems.push({
+                  imgserverUrl: imgserverUrl,
+                  imageUrl:imageUrl,
                   title: item.Title,
                   svg: item.SideNavIconSvg,
                   url: item.SideNavUrl,
@@ -47,7 +54,7 @@ export default class SideNavProvider implements ISideNavProvider {
         "SideNavUrl",
         "SideNavIconSvg",
         "SideNavOpenInNewWindow",
-        "SideNavParent/Title"
+        "SideNavParent/Title","IconImages"
       )
       .expand("SideNavParent")
       .orderBy("SideNavOrder")
@@ -58,8 +65,15 @@ export default class SideNavProvider implements ISideNavProvider {
           const siteQuickLinkItems: ISideNavItem[] = [];
           items.forEach(
             (item: ISPSideNavItem): void => {
+              const itemImage = JSON.parse(item.IconImages) || {};
+              const imgserverUrl = itemImage.serverUrl || "";
+              const imageUrl = itemImage.serverRelativeUrl || "";
+              console.log(imgserverUrl);
+              console.log(imageUrl);
               if (!item.SideNavParent) {
                 siteQuickLinkItems.push({
+                  imgserverUrl: imgserverUrl,
+                  imageUrl:imageUrl,
                   title: item.Title,
                   svg: item.SideNavIconSvg,
                   url: item.SideNavUrl,
@@ -81,8 +95,16 @@ export default class SideNavProvider implements ISideNavProvider {
     const subNavItems: ISideNavItem[] = [];
     spNavItems.forEach(
       (item: ISPSideNavItem): void => {
+        const itemImage = JSON.parse(item.IconImages) || {};
+        const imgserverUrl = itemImage.serverUrl || "";
+        const imageUrl = itemImage.serverRelativeUrl || "";
+        console.log(imgserverUrl);
+        console.log(imageUrl);
         if (item.SideNavParent && item.SideNavParent.Title === filter) {
           subNavItems.push({
+            
+            imgserverUrl: imgserverUrl,
+                  imageUrl:imageUrl,
             title: item.Title,
             url: item.SideNavUrl,
             openInNewWindow: item.SideNavOpenInNewWindow
