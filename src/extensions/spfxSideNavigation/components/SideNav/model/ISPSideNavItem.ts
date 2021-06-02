@@ -6,4 +6,5 @@ export default interface ISPSideNavItem {
   SideNavParent?: {
     Title: string;
   };
+  IconImages:any;
 }

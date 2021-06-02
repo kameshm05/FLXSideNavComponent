@@ -114,10 +114,10 @@ export default class SideNav extends React.Component<
         </div>    
         </div>
       </div>
-      </div>
+      </div> 
     );
   } 
-
+ 
   private handleOutsideClick = (event: any) => {
     if (!this.state.isOpened) {
       return;

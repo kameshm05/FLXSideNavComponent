@@ -32,13 +32,16 @@ export default class SideNavNode extends React.Component<
     return (
       <div key={this.props.key} className={nodeClasses.join(" ")}>
         <div role="menu" onClick={e => this.nodeClick(e)}>
-          {(this.props.siteNavItem.svg && (
+          {/* {(this.props.siteNavItem.svg && (
+             */}
+             {(this.props.siteNavItem.imageUrl && (
             <div className="icon-node ms-fadeIn400">
-              <div
+              {/* <div
                 className="icon ms-fadeIn400"
-                style={{ maxWidth: 50, color: "#fff" }}
-                dangerouslySetInnerHTML={{ __html: this.props.siteNavItem.svg }}
-              />
+                // style={{ maxWidth: 50, color: "#fff" }}
+                // dangerouslySetInnerHTML={{ __html: this.props.siteNavItem.svg }}
+              /> */} 
+              <img className="sideNavImg" src={`${this.props.siteNavItem.imgserverUrl}${this.props.siteNavItem.imageUrl}` } />
               {this.props.navIsOpened && (
                 <div>
                   <div className="title noselect">
@@ -68,7 +71,8 @@ export default class SideNavNode extends React.Component<
               )}
             </div>
           )) ||
-            (!this.props.siteNavItem.svg && (
+            // (!this.props.siteNavItem.svg && (
+              (!this.props.siteNavItem.imageUrl && (
               <div className="title-node">
                 <div>
                   <div className="title noselect">

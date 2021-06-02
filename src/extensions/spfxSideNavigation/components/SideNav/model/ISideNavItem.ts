@@ -5,6 +5,8 @@ export default interface ISideNavItem {
     svg?: string;
     openInNewWindow?: boolean;
     subNavItems?: ISideNavItem[];
+    imgserverUrl:string;
+    imageUrl:string;
 }
 export default interface IQuickLinkItem {
     title: string;
