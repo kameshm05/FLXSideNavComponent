@@ -112,9 +112,9 @@
 div[data-automationid="MinimalHeader"] {
   display: none;
 }
-.webPartContainer {
+/* .webPartContainer {
   display: none;
-}
+} */  
 .ext-header.opened {
   padding-left: 18rem;
 }
@@ -128,4 +128,8 @@ div[data-automationid="MinimalHeader"] {
   width: 1.3rem;
   height: 1.3rem;
   margin: 0 0.6rem;
+}
+/* nishanth changes */
+#CommentsWrapper{
+  display:none;
 }

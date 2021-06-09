@@ -14,7 +14,7 @@ export default class SideNavNode extends React.Component<
     super(props);
     this.state = {
       isOpened: false
-    };
+    };   
   }
 
   public render(): JSX.Element {
