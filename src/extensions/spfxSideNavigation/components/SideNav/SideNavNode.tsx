@@ -40,7 +40,7 @@ export default class SideNavNode extends React.Component<
                 className="icon ms-fadeIn400"
                 // style={{ maxWidth: 50, color: "#fff" }}
                 // dangerouslySetInnerHTML={{ __html: this.props.siteNavItem.svg }}
-              /> */} 
+              /> */}  
               <img className="sideNavImg" src={`${this.props.siteNavItem.imgserverUrl}${this.props.siteNavItem.imageUrl}` } />
               {this.props.navIsOpened && (
                 <div>
